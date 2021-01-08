@@ -30,13 +30,21 @@
             <div class="tagline"><span>Find out if you can</span></div>
             <div class="title">
                 <h1>SU RVI VE</h1>
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, eum.</span>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quibusdam ullam, cum autem dignissimos hic inventore omnis enim aperiam excepturi.</span>
             </div>
             <div class="slider">
-                <div class="slide"><img src="img/mountain.png" alt=""></div>
+                <div class="slides-wrapper">
+                    <div class="slide active"><img src="img/mountain.png" alt=""></div>
+                    <div class="slide"><img src="img/mountain.png" alt=""></div>
+                    <div class="slide"><img src="img/mountain.png" alt=""></div>
+                    <div class="arrows">
+                        <div class="forward"><img src="img/forward-arrow.svg" alt=""></div>
+                        <div class="backward"><img src="img/backward-arrow.svg" alt=""></div>
+                    </div>
+                </div>
                 <div class="slider-navigation">
                     <ul>
-                        <li>01</li>
+                        <li class="active">01</li>
                         <li>02</li>
                         <li>03</li>
                     </ul>
@@ -44,6 +52,28 @@
             </div>
         </div>
     </header>
-      
+    <script>
+
+        //Tabs
+        const tabNav = document.querySelectorAll(".slider-navigation li");
+        const forwardArrow = document.querySelector(".arrows .forward");
+        const backwardArrow = document.querySelector(".arrows .backward");
+
+        //Digit navigation
+        tabNav.forEach(item => {
+            item.addEventListener("click", e => {
+                document.querySelector(".slider-navigation .active").classList.remove("active");
+                item.classList.add("active");
+            });
+        });
+
+        //Arrow navigation
+        forwardArrow.addEventListener("click", e => {
+            const activeSlide = document.querySelector(".slide.active");
+            const nextSlide = activeSlide.nextSibling;
+            activeSlide.classList.remove("active");
+            nextSlide.classList.add("active");
+        });
+    </script>
 </body>
 </html>

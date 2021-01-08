@@ -5,7 +5,7 @@
 
 body {
     font-family: 'Teko', sans-serif;
-    font-size: 10px;
+    font-size: 14px;
     background-color: #edf0f2;
 }
 
@@ -44,6 +44,7 @@ nav .menu {
     width: 90%;
     display: flex;
     justify-content: flex-end;
+    font-weight: 600;
 }
 
 nav ul {
@@ -63,35 +64,115 @@ nav li {
 
 .tagline {
     flex: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .tagline span {
+    transform: rotate(-90deg);
     display: block;
-    transform: rotate(-90deg); 
+    font-size: 40px;
+    font-weight: 600;
+    white-space: nowrap;
+    position: absolute;
+    right: -100px;
+    top: 260px;
 }
-
 .title {
-    flex: 2;
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 }
 
 .title h1 {
     color: #E4003B;
-    font-size: 74px;
+    font-size: 142px;
+    line-height: 106px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.title span {
+    line-height: 25px;
+    font-weight: 400;
 }
 
 .slider {
-    flex: 8;
+    flex: 12;
     display: flex;
 }
 
-.slider img {
+.slides-wrapper {
+    flex: 8;
+    position: relative;
+}
+
+.slider-navigation {
+    flex: 1;
+}
+
+.slide {
+    position: absolute;
+    opacity: 0;
+    display: none;
+    transition: 0.5s;
+}
+
+.slide.active {
+    position: relative;
+    display: block;
+    opacity: 1;
+}
+
+.slide img {
     width: 100%;
+}
+
+.arrows {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.forward, .backward {
+    width: 66px;
+    height: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.forward {
+    background-color: #E4003B;
+}
+
+.backward {
+    background-color: #edf0f2;
 }
 
 .slider-navigation ul {
     height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
     justify-content: center;
-    font-size: 20px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.slider-navigation li {
+    float: right;
+    padding: 5px;
+    padding-left: 25px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.slider-navigation .active {
+    font-size: 50px;
+    border-bottom: 1px solid #E4003B;
 }
