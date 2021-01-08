@@ -1,0 +1,12 @@
+<svg id="btn_next_ACTIVE" xmlns="http://www.w3.org/2000/svg" width="66" height="66" viewBox="0 0 66 66">
+  <rect id="Прямоугольник_18" data-name="Прямоугольник 18" width="66" height="66" fill="#e4003b"/>
+  <g id="ico_arrow" transform="translate(20.5 25.5)">
+    <line id="Линия_10" data-name="Линия 10" x2="8" y2="8" transform="translate(16)" fill="none" stroke="#edf0f2" stroke-linecap="round" stroke-width="2"/>
+    <line id="Линия_11" data-name="Линия 11" y1="8" x2="8" transform="translate(16 8)" fill="none" stroke="#edf0f2" stroke-linecap="round" stroke-width="2"/>
+    <line id="Линия_12" data-name="Линия 12" x2="24" transform="translate(0 8)" fill="none" stroke="#edf0f2" stroke-linecap="round" stroke-width="2"/>
+    <g id="ico_arrow-2" data-name="ico_arrow" transform="translate(11.5 3)">
+      <line id="Линия_10-2" data-name="Линия 10" x2="5" y2="5" transform="translate(0.5)" fill="none" stroke="#edf0f2" stroke-linecap="round" stroke-width="2"/>
+      <line id="Линия_11-2" data-name="Линия 11" y1="5" x2="5.5" transform="translate(0 5)" fill="none" stroke="#edf0f2" stroke-linecap="round" stroke-width="2"/>
+    </g>
+  </g>
+</svg>
