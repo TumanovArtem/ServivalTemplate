@@ -27,16 +27,23 @@
         </nav>
 
         <div class="container">
-            <div class="tagline"><span>Find out if you can</span></div>
+            <div class="tagline">
+                <span>Find out if you can</span>
+                <div class="media">
+                    <a href="#"><img src="img/facebook.svg" alt=""></a>
+                    <a href="#"><img src="img/twitter.svg" alt=""></a>
+                    <a href="#"><img src="img/youtube-logotype.svg" alt=""></a>
+                </div>
+            </div>
             <div class="title">
                 <h1>SU RVI VE</h1>
                 <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quibusdam ullam, cum autem dignissimos hic inventore omnis enim aperiam excepturi.</span>
             </div>
             <div class="slider">
                 <div class="slides-wrapper">
-                    <div class="slide active"><img src="img/mountain.png" alt=""></div>
-                    <div class="slide"><img src="img/mountain.png" alt=""></div>
-                    <div class="slide"><img src="img/mountain.png" alt=""></div>
+                    <div class="slide active" data-index="1"><img src="img/mountain.png" alt=""></div>
+                    <div class="slide" data-index="2"><img src="img/__2.png" alt=""></div>
+                    <div class="slide" data-index="3"><img src="img/__6@2x.png" alt=""></div>
                     <div class="arrows">
                         <div class="forward"><img src="img/forward-arrow.svg" alt=""></div>
                         <div class="backward"><img src="img/backward-arrow.svg" alt=""></div>
@@ -44,9 +51,9 @@
                 </div>
                 <div class="slider-navigation">
                     <ul>
-                        <li class="active">01</li>
-                        <li>02</li>
-                        <li>03</li>
+                        <li class="active" data-index="1">01</li>
+                        <li data-index="2">02</li>
+                        <li data-index="3">03</li>
                     </ul>
                 </div>
             </div>
@@ -62,6 +69,14 @@
         //Digit navigation
         tabNav.forEach(item => {
             item.addEventListener("click", e => {
+
+                const newActiveSlideIndex = Number(item.dataset.index);
+
+                //Show slide
+                document.querySelector(".slide.active").classList.remove("active");
+                document.querySelector(".slide[data-index='" + newActiveSlideIndex + "']").classList.add("active");
+                
+                //Change active button
                 document.querySelector(".slider-navigation .active").classList.remove("active");
                 item.classList.add("active");
             });
@@ -70,9 +85,42 @@
         //Arrow navigation
         forwardArrow.addEventListener("click", e => {
             const activeSlide = document.querySelector(".slide.active");
-            const nextSlide = activeSlide.nextSibling;
+            let activeSlideIndex = activeSlide.dataset.index;
+            let newActiveSlideIndex = 1;
+
+            if (Number(activeSlideIndex) < 3) {
+                newActiveSlideIndex = ++activeSlideIndex;
+            } else {
+                newActiveSlideIndex = 1;
+            }
+
+            const nextSlide = document.querySelector(".slide[data-index='" + newActiveSlideIndex + "']");
             activeSlide.classList.remove("active");
             nextSlide.classList.add("active");
+
+            //Change active button
+            document.querySelector(".slider-navigation .active").classList.remove("active");
+            document.querySelector(".slider-navigation [data-index='" + newActiveSlideIndex + "']").classList.add("active");
+        });
+
+        backwardArrow.addEventListener("click", e => {
+            const activeSlide = document.querySelector(".slide.active");
+            let activeSlideIndex = activeSlide.dataset.index;
+            let newActiveSlideIndex = 1;
+
+            if (Number(activeSlideIndex) > 1) {
+                newActiveSlideIndex = --activeSlideIndex;
+            } else {
+                newActiveSlideIndex = 3;
+            }
+
+            const nextSlide = document.querySelector(".slide[data-index='" + newActiveSlideIndex + "']");
+            activeSlide.classList.remove("active");
+            nextSlide.classList.add("active");
+
+            //Change active button
+            document.querySelector(".slider-navigation .active").classList.remove("active");
+            document.querySelector(".slider-navigation [data-index='" + newActiveSlideIndex + "']").classList.add("active");
         });
     </script>
 </body>

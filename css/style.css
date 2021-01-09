@@ -67,6 +67,7 @@ nav li {
     display: flex;
     align-items: center;
     position: relative;
+    align-items: flex-end;
 }
 
 .tagline span {
@@ -79,8 +80,22 @@ nav li {
     right: -100px;
     top: 260px;
 }
+
+.tagline .media {
+    display: flex;
+    flex-direction: column;
+}
+
+.tagline a {
+    margin: 10px 0;
+}
+
+.tagline img {
+    width: 19px;
+}
+
 .title {
-    flex: 3;
+    flex: 5;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -101,13 +116,15 @@ nav li {
 }
 
 .slider {
-    flex: 12;
+    flex: 22;
     display: flex;
 }
 
 .slides-wrapper {
     flex: 8;
     position: relative;
+    height: 673px;
+    overflow: hidden;
 }
 
 .slider-navigation {
@@ -117,13 +134,10 @@ nav li {
 .slide {
     position: absolute;
     opacity: 0;
-    display: none;
     transition: 0.5s;
 }
 
 .slide.active {
-    position: relative;
-    display: block;
     opacity: 1;
 }
 
